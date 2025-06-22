@@ -21,11 +21,9 @@ const Button = (props: PropsInterface): JSX.Element => {
   };
   return (
     <div
-      className={[
-        styles.root,
-        disabled ? styles.disabled : "",
-        styles[variant || "default"],
-      ].join(" ")}
+      className={[styles.root, disabled ? styles.disabled : "", styles[variant || "default"]].join(
+        " "
+      )}
     >
       {renderContent(children)}
     </div>

@@ -5,11 +5,9 @@ import dbConnect from "middleware/db-connect";
 import { findAllLocations } from "mongoose/locations/services";
 import { LocationType } from "mongoose/locations/schema";
 
-const Home: NextPage = (
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const locations: LocationType[] = JSON.parse(props.data?.locations);
-  let title = `The Food Finder - Home`;
+  const title = `The Food Finder - Home`;
   return (
     <div>
       <Head>

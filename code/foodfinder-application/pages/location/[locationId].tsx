@@ -12,11 +12,9 @@ import { findLocationsById } from "mongoose/locations/services";
 import { LocationType } from "mongoose/locations/schema";
 import { ParsedUrlQuery } from "querystring";
 
-const Location: NextPage = (
-  props: InferGetServerSidePropsType<typeof getServerSideProps>
-) => {
-  let location: LocationType = JSON.parse(props.data?.location);
-  let title = `The Food Finder - Details for ${location?.name}`;
+const Location: NextPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const location: LocationType = JSON.parse(props.data?.location);
+  const title = `The Food Finder - Details for ${location?.name}`;
   return (
     <div>
       {" "}
@@ -38,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 ) => {
   let locations: LocationType[] | [];
-  let { locationId } = context.query;
+  const { locationId } = context.query;
   try {
     await dbConnect();
     locations = await findLocationsById([locationId as string]);

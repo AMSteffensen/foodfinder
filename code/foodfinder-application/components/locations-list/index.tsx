@@ -8,9 +8,7 @@ const LocationsList = (props: PropsInterface): JSX.Element => {
   return (
     <ul className={styles.root}>
       {props.locations.map((location) => {
-        return (
-          <LocationsListItem location={location} key={location.location_id} />
-        );
+        return <LocationsListItem location={location} key={location.location_id} />;
       })}
     </ul>
   );
