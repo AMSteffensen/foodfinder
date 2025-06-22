@@ -20,7 +20,6 @@ A full-stack application for discovering and managing restaurant locations, buil
 1. Clone the repository
 ```bash
 git clone https://github.com/AMSteffensen/foodfinder
-cd foodfinder
 ```
 
 2. Configure environment variables
