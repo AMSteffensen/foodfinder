@@ -17,9 +17,16 @@ A full-stack application for discovering and managing restaurant locations, buil
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository with submodules
 ```bash
 git clone https://github.com/AMSteffensen/foodfinder
+cd foodfinder
+
+# Either use the setup command
+make setup
+
+# Or initialize submodules manually
+make submodule-init
 ```
 
 2. Configure environment variables
@@ -61,7 +68,21 @@ make docker-up
 
 ## Development
 
+### Docker Commands
 - `make docker-up`: Start all services
+- `make docker-up-d`: Start all services in detached mode
 - `make docker-down`: Stop all services
 - `make docker-build`: Rebuild containers
 - `make docker-logs`: View logs
+- `make frontend-shell`: Access the frontend container's shell
+- `make backend-shell`: Access the MongoDB container's shell
+- `make prune`: Clean up unused Docker resources
+
+### Git Submodule Commands
+- `make submodule-init`: Initialize and update all submodules (run after cloning)
+- `make submodule-update`: Update submodules to their latest versions
+- `make submodule-add-frontend`: Add the frontend application as a submodule
+- `make submodule-remove-frontend`: Remove the frontend submodule if needed
+
+### Quick Setup
+- `make setup`: Runs everything needed (initializes submodules, builds Docker images, starts services)
