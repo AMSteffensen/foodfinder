@@ -1,11 +1,10 @@
 # Makefile for Foodfinder Docker Compose setup
 
-# Start all services with correct user permissions for mounted files
 docker-up:
-	MY_USER=$(id -u):$(id -g) docker compose up
+	docker compose up
 
 docker-up-d:
-	MY_USER=$(id -u):$(id -g) docker compose up -d
+	docker compose up -d
 
 docker-down:
 	docker compose down
@@ -21,3 +20,6 @@ frontend-shell:
 
 prune:
 	docker system prune -f
+
+docker-build:
+	docker compose build
