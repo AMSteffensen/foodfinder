@@ -1,0 +1,3 @@
+[submodule "code/foodfinder-application"]
+	path = code/foodfinder-application
+	url = https://github.com/AMSteffensen/foodfinder-frontend
